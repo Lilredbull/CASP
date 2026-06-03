@@ -82,9 +82,10 @@ def ensure_data_shape(data):
     data.setdefault("MedicalLocations", [])
 
     data.setdefault("Distribution", {})
-    data["Distribution"].setdefault("Action", [])
-    data["Distribution"].setdefault("Assurance", [])
+
+    data["Distribution"].setdefault("Distribution", [])
     data["Distribution"].setdefault("Info", [])
+
 
     data.setdefault("Signatory", {})
     data["Signatory"].setdefault("Name", "")
@@ -603,33 +604,27 @@ data["MedicalLocations"] = updated_medical_locations
 
 st.header("Distribution")
 
-col1, col2, col3 = st.columns(3)
+
+col1, col2 = st.columns(2)
 
 with col1:
-    action_text = st.text_area(
-        "Action (one per line)",
-        value=to_multiline(data["Distribution"]["Action"]),
-        key="dist_action",
+    distribution_text = st.text_area(
+        "Distribution (one per line)",
+        value=to_multiline(data["Distribution"].get("Distribution", [])),
+        key="dist_distribution",
         height=150,
     )
-    data["Distribution"]["Action"] = parse_multiline(action_text)
+    data["Distribution"]["Distribution"] = parse_multiline(distribution_text)
 
 with col2:
-    assurance_text = st.text_area(
-        "Assurance (one per line)",
-        value=to_multiline(data["Distribution"]["Assurance"]),
-        key="dist_assurance",
-        height=150,
-    )
-    data["Distribution"]["Assurance"] = parse_multiline(assurance_text)
-
-with col3:
     info_text = st.text_area(
         "Info (one per line)",
-        value=to_multiline(data["Distribution"]["Info"]),
+        value=to_multiline(data["Distribution"].get("Info", [])),
         key="dist_info",
         height=150,
     )
+
+
     data["Distribution"]["Info"] = parse_multiline(info_text)
 
 

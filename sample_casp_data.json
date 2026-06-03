@@ -32,17 +32,20 @@
       "Date": "01 August 2026"
     },
     "AF5010C": {
-      "Reference": "AF-5010C",
+      "Reference": "Obstacle Course",
       "Date": "15 July 2026"
     }
   },
   "Authority": {
-    "AtCApprover": "Maj M Sayers"
+    "AtCApprover": "Maj D Deroyal"
   },
   "Documents": [
     "Training programme",
     "Stores list",
-    "Transport plan"
+    "Transport plan",
+    "Exercise and Action Safety Plan (EASP)",
+    "MOD Form 1930 Safe Activity Assurance Form (SAAF)",
+    "Joining instructions"
   ],
   "Staff": [
     {
@@ -138,6 +141,26 @@
         "Location": "Main gate RV point",
         "Remarks": "Grid ref pre-briefed"
       }
+    },
+    {
+      "Name": "Example Drill Hall",
+      "What3Words": "mock.words.example",
+      "SafetyVehicle": {
+        "Location": "Car Park",
+        "Remarks": "White Minibus, keys held by SAO"
+      },
+      "UrgentCare": {
+        "Location": "Walk-in Centre, High Street",
+        "Remarks": "Open 24hrs"
+      },
+      "AandE": {
+        "Location": "East Surrey General Hospital",
+        "Remarks": "24/7"
+      },
+      "AmbulanceRV": {
+        "Location": "Car Park RV point",
+        "Remarks": "Grid ref pre-briefed"
+      }
     }
   ],
   "Signatory": {
@@ -146,16 +169,18 @@
     "Appointment": "Activity Owner"
   },
   "Distribution": {
-    "Action": [
-      "OC Example Company",
-      "Activity Owner"
-    ],
-    "Assurance": [
-      "Training Safety Adviser"
+    "Distribution": [
+      "County QM",
+      "County VQ Officer",
+      "CAA B Company",
+      "SSgt Abbott",
+      "Sgt Costello",
+      "Sgt Laurel",
+      "Sgt Hardy",
+      "Sgt Rip-vanwinkle"
     ],
     "Info": [
-      "Company staff",
-      "Detachment commanders"
+      "OC C Company"
     ]
   },
   "Annexes": [

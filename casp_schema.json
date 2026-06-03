@@ -37,9 +37,16 @@
     }
   },
   "Authority": {
-    "AtCApprover": "Maj M Sayers"
+    "AtCApprover": "Maj M Deroyal"
   },
-  "Documents": [],
+  "Documents": [
+    "Risk Assessment",
+    "Training Programme",
+    "Stores List",
+    "Exercise and Action Safety Plan (EASP)",
+    "MOD Form 1930 Safe Activity Assurance Form (SAAF)",
+    "Joining Instructions"
+  ],
   "Aims": [
     "Detail the duties and responsibilities of the staff",
     "Detail the implementation of control measures from the SST and Risk Assessment",
@@ -93,8 +100,7 @@
     "Appointment": "Detachment Commander"
   },
   "Distribution": {
-    "Action": [],
-    "Assurance": [],
+    "Distribution": [],
     "Info": []
   },
   "Annexes": [

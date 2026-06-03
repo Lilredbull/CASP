@@ -32,6 +32,14 @@ DEFAULT_AIMS = [
     "Detail the implementation of control measures from the SST and Risk Assessment",
     "Detail the administrative and support requirements",
 ]
+DEFAULT_DOCUMENTS = [
+    "Risk Assessment",
+    "Training Programme",
+    "Stores List",
+    "Exercise and Action Safety Plan (EASP)",
+    "MOD Form 1930 Safe Activity Assurance Form (SAAF)",
+    "Joining Instructions"
+]
 
 
 def load_schema() -> Dict[str, Any]:
@@ -144,7 +152,7 @@ def collect_basic_details(data: Dict[str, Any]) -> None:
     data["Authority"]["AtCApprover"] = input_text("AtC approver", data["Authority"]["AtCApprover"])
 
     print("\n=== Supporting documents ===")
-    data["Documents"] = input_list("List additional documents", data.get("Documents", []))
+    data["Documents"] = input_list("List additional documents", DEFAULT_DOCUMENTS)
 
     print("\n=== Aims of this document ===")
     data["Aims"] = input_list("Enter aim statements", DEFAULT_AIMS)
@@ -251,9 +259,14 @@ def collect_locations(data: Dict[str, Any]) -> None:
 def collect_distribution(data: Dict[str, Any]) -> None:
     print("\n=== Distribution ===")
     distribution = data["Distribution"]
-    distribution["Action"] = input_list("Action list", distribution.get("Action", []))
-    distribution["Assurance"] = input_list("Assurance list", distribution.get("Assurance", []))
-    distribution["Info"] = input_list("Info list", distribution.get("Info", []))
+    distribution["Distribution"] = input_list(
+        "Distribution list",
+        distribution.get("Distribution", []),
+    )
+    distribution["Info"] = input_list(
+        "Info list",
+        distribution.get("Info", []),
+    )
 
     print("\n=== Signatory ===")
     signatory = data["Signatory"]
@@ -381,6 +394,80 @@ def insert_table_after(paragraph, table):
  
     return table
 
+def build_medical_locations_table(doc, medical_locations):
+    table = doc.add_table(rows=1, cols=5)
+    table.autofit = False
+    table.style = "Table Grid"
+
+    # column widths
+    table.columns[0].width = Inches(0.6)   # Ser
+    equal_width = Inches(1.6)
+    table.columns[1].width = equal_width
+    table.columns[2].width = equal_width
+    table.columns[3].width = equal_width
+    table.columns[4].width = equal_width
+
+    # force column 0 width
+    for row in table.rows:
+        row.cells[0].width = Inches(0.6)
+
+    # headers
+    headers = ["Ser", "Location", "Type", "Facility", "Remarks"]
+    for i, h in enumerate(headers):
+        cell = table.rows[0].cells[i]
+        cell.text = ""
+
+        p = cell.paragraphs[0]
+        p.style = doc.styles["Normal"]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+        run = p.add_run(h)
+        run.bold = True
+        run.font.size = Pt(10)
+
+    # data
+    ser = 1
+
+    for loc in medical_locations:
+        name = loc.get("Name", "")
+
+        entries = [
+            ("Safety Vehicle", loc.get("SafetyVehicle", {})),
+            ("Urgent Care", loc.get("UrgentCare", {})),
+            ("A&E", loc.get("AandE", {})),
+            ("Ambulance RV", loc.get("AmbulanceRV", {})),
+        ]
+
+        for entry_type, entry in entries:
+            row_cells = table.add_row().cells
+            row_cells[0].width = Inches(0.6)
+
+            values = [
+                str(ser),
+                name,
+                entry_type,
+                entry.get("Location", ""),
+                entry.get("Remarks", ""),
+            ]
+
+            for i, val in enumerate(values):
+                cell = row_cells[i]
+                cell.text = ""
+
+                p = cell.paragraphs[0]
+                remove_numbering(p)
+                p.style = doc.styles["Normal"]
+
+                if i == 0:
+                    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+                run = p.add_run(val)
+                run.font.size = Pt(10)
+
+            ser += 1
+
+    return table
+
 def replace_paragraph_with_locations_table(doc, placeholder_text, locations_list):
     for paragraph in doc.paragraphs:
         if placeholder_text in paragraph.text:
@@ -404,6 +491,17 @@ def replace_paragraph_with_staff_table(doc, placeholder_text, staff_list):
 
     print(f"Placeholder '{placeholder_text}' not found in document.")
 
+def replace_paragraph_with_medical_locations_table(doc, placeholder_text, medical_locations):
+    for paragraph in doc.paragraphs:
+        if placeholder_text in paragraph.text:
+
+            table = build_medical_locations_table(doc, medical_locations)
+
+            paragraph._p.addnext(table._tbl)
+            paragraph._element.getparent().remove(paragraph._element)
+            return
+
+    print(f"Placeholder '{placeholder_text}' not found in document.")
 
 def render_docx(data: Dict[str, Any], output_path: Path = DEFAULT_OUTPUT) -> Path:
     # Pass 1: render normal template content with docxtpl
@@ -416,6 +514,9 @@ def render_docx(data: Dict[str, Any], output_path: Path = DEFAULT_OUTPUT) -> Pat
         "Authority": data.get("Authority", {}),
         "Documents": data.get("Documents", []),
         "Aims": data.get("Aims", []),
+        "Distribution": data.get("Distribution", {}),
+        "Signatory": data.get("Signatory", {}),
+        "Annexes": data.get("Annexes", []),
     }
 
     tpl.render(context)
@@ -434,6 +535,15 @@ def render_docx(data: Dict[str, Any], output_path: Path = DEFAULT_OUTPUT) -> Pat
 
     replace_paragraph_with_staff_table(doc, "__STAFF_TABLE__", all_staff)
 
+   
+# --- Medical Locations table ---
+    replace_paragraph_with_medical_locations_table(
+        doc,
+        "__MEDICAL_LOCATIONS_TABLE__",
+        data.get("MedicalLocations", [])
+    )
+
+
 
     doc.save(str(output_path))
 
@@ -446,6 +556,7 @@ def choose_starting_data():
     if input_yes_no("Load the included sample data", False):
         data = json.loads(EXAMPLE_PATH.read_text(encoding="utf-8"))
         data["Aims"] = data.get("Aims", DEFAULT_AIMS)
+        data["Documents"] = data.get("Documents", DEFAULT_DOCUMENTS)
         data["Staff"] = data.get("Staff", [])
 
         if input_yes_no("Generate document now?", True):
@@ -475,6 +586,7 @@ def main() -> None:
         collect_distribution(data)
 
         data["Aims"] = input_list("Enter aim statements", DEFAULT_AIMS)
+        data["Documents"] = input_list("List additional documents", DEFAULT_DOCUMENTS)
 
         json_output = Path(
             input_text("JSON output path", str(BASE_DIR / "casp_session.json"))
