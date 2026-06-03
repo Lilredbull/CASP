@@ -1,0 +1,107 @@
+{
+  "Unit": {
+    "Appointment": "Detachment Commander",
+    "Name": "Sgt Anyone",
+    "Address": {
+      "Line1": "1st Line of Address",
+      "Line2": "2nd Line of Address",
+      "County": "Sussex",
+      "Postcode": "HO00 B00"
+    },
+    "Phone": "01234 567890",
+    "Email": "noname@armymail.mod.uk",
+    "DistributionReference": "distribution"
+  },
+  "Activity": {
+    "Code": "",
+    "Name": "",
+    "Type": "",
+    "SubUnit": "C Coy",
+    "PrimaryLocation": "",
+    "StartDate": "",
+    "EndDate": "",
+    "DocumentDate": "",
+    "Purpose": "",
+    "CFAVCount": "",
+    "CadetCount": "",
+    "ConsultedWith": "Maj. Plumb"
+  },
+  "RiskAssessments": {
+    "CoreTrainingAtRFCAorDIO": {
+      "Title": "Sussex ACF Core training at RFCA/DIO locations",
+      "Date": ""
+    },
+    "AF5010C": {
+      "Reference": "",
+      "Date": ""
+    }
+  },
+  "Authority": {
+    "AtCApprover": "Maj M Sayers"
+  },
+  "Documents": [],
+  "Aims": [
+    "Detail the duties and responsibilities of the staff",
+    "Detail the implementation of control measures from the SST and Risk Assessment",
+    "Detail the administrative and support requirements"
+  ],
+  "Staff": [
+    {
+      "Role": "Senior Activity Owner",
+      "Rank": "Col.",
+      "Name": "Pumpkin",
+      "Qualification": "",
+      "Remarks": ""
+    },
+    {
+      "Role": "Activity Owner",
+      "Rank": "Maj.",
+      "Name": "Plumb",
+      "Qualification": "",
+      "Remarks": ""
+    },
+    {
+      "Role": "Activity Planner",
+      "Rank": "Capt.",
+      "Name": "Winds",
+      "Qualification": "",
+      "Remarks": ""
+    },
+    {
+      "Role": "Personnel Owner",
+      "Rank": "Various",
+      "Name": "Detachment Commander(s)",
+      "Qualification": "",
+      "Remarks": ""
+    }
+  ],
+  "SubActivityOwners": [],
+  "FirstAiders": [],
+  "Drivers": [],
+  "Locations": [],
+  "Weather": {
+    "ForecastSources": [
+      "Met Office",
+      "BBC Weather",
+      "AccuWeather"
+    ]
+  },
+  "MedicalLocations": [],
+  "Signatory": {
+    "Name": "Anyone",
+    "Rank": "Sgt",
+    "Appointment": "Detachment Commander"
+  },
+  "Distribution": {
+    "Action": [],
+    "Assurance": [],
+    "Info": []
+  },
+  "Annexes": [
+    "Logistic Support Request",
+    "CFAV Safety Brief",
+    "Cadet Safety Brief",
+    "Main Events List",
+    "Sketch Map"
+  ]
+}

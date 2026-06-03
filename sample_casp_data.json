@@ -1,0 +1,168 @@
+{
+  "Unit": {
+    "Appointment": "Entertainment Officer",
+    "Name": "Sgt Anyone",
+    "Address": {
+      "Line1": "Example Drill Hall",
+      "Line2": "High Street",
+      "County": "East Sussex",
+      "Postcode": "BN1 1AA"
+    },
+    "Phone": "01234 567890",
+    "Email": "mynameisnobody@armymail.mod.uk",
+    "DistributionReference": "J/K/345/67890"
+  },
+  "Activity": {
+    "Code": "W/SM-001-345",
+    "Name": "Weekend Fieldcraft Training",
+    "Type": "Fieldcraft training",
+    "SubUnit": "C Coy",
+    "PrimaryLocation": "Example Training Area",
+    "StartDate": "12 September 2026",
+    "EndDate": "13 September 2026",
+    "DocumentDate": "01 September 2026",
+    "Purpose": "deliver progressive fieldcraft training and consolidation",
+    "CFAVCount": "6",
+    "CadetCount": "28",
+    "ConsultedWith": "Training Safety Adviser"
+  },
+  "RiskAssessments": {
+    "CoreTrainingAtRFCAorDIO": {
+      "Title": "Sussex ACF 'Core training at RFCA/DIO locations'",
+      "Date": "01 August 2026"
+    },
+    "AF5010C": {
+      "Reference": "AF-5010C",
+      "Date": "15 July 2026"
+    }
+  },
+  "Authority": {
+    "AtCApprover": "Maj M Sayers"
+  },
+  "Documents": [
+    "Training programme",
+    "Stores list",
+    "Transport plan"
+  ],
+  "Staff": [
+    {
+      "Role": "Senior Activity Owner",
+      "Rank": "Maj",
+      "Name": "A Example",
+      "Qualification": "",
+      "Remarks": "Overall senior owner"
+    },
+    {
+      "Role": "Activity Owner",
+      "Rank": "Capt",
+      "Name": "B Example",
+      "Qualification": "",
+      "Remarks": "Present throughout"
+    },
+    {
+      "Role": "Activity Planner",
+      "Rank": "Lt",
+      "Name": "C Example",
+      "Qualification": "",
+      "Remarks": "Planning support"
+    },
+    {
+      "Role": "Personnel Owner",
+      "Rank": "SSI",
+      "Name": "D Example",
+      "Qualification": "",
+      "Remarks": "Attendance admin"
+    }
+  ],
+  "SubActivityOwners": [
+    {
+      "Role": "Sub-Activity Owner",
+      "Rank": "Sgt",
+      "Name": "E Example",
+      "Qualification": "Range Conducting Officer",
+      "Remarks": "Dry training lane"
+    }
+  ],
+  "FirstAiders": [
+    {
+      "Role": "First Aider",
+      "Rank": "Sgt",
+      "Name": "F Example",
+      "Qualification": "FAW",
+      "Remarks": "Lead first aider"
+    }
+  ],
+  "Drivers": [
+    {
+      "Role": "Driver",
+      "Rank": "WO2",
+      "Name": "G Example",
+      "Qualification": "D+ licence",
+      "Remarks": "Minibus"
+    }
+  ],
+  "Locations": [
+    {
+      "Name": "Example Training Area",
+      "RiskControls": "Access control, marked training areas, vehicle plan, welfare point"
+    },
+    {
+      "Name": "Example Drill Hall",
+      "RiskControls": "Fire brief, welfare facilities, sign in/sign out"
+    }
+  ],
+  "Weather": {
+    "ForecastSources": [
+      "Met Office",
+      "BBC Weather",
+      "AccuWeather"
+    ]
+  },
+  "MedicalLocations": [
+    {
+      "Name": "Example Training Area",
+      "What3Words": "mock.words.example",
+      "SafetyVehicle": {
+        "Location": "South gate hardstanding",
+        "Remarks": "Blue Transit, keys held by AO"
+      },
+      "UrgentCare": {
+        "Location": "Example UTC, High Street",
+        "Remarks": "Open 08:00-20:00"
+      },
+      "AandE": {
+        "Location": "Example General Hospital",
+        "Remarks": "24/7"
+      },
+      "AmbulanceRV": {
+        "Location": "Main gate RV point",
+        "Remarks": "Grid ref pre-briefed"
+      }
+    }
+  ],
+  "Signatory": {
+    "Name": "B Example",
+    "Rank": "Capt",
+    "Appointment": "Activity Owner"
+  },
+  "Distribution": {
+    "Action": [
+      "OC Example Company",
+      "Activity Owner"
+    ],
+    "Assurance": [
+      "Training Safety Adviser"
+    ],
+    "Info": [
+      "Company staff",
+      "Detachment commanders"
+    ]
+  },
+  "Annexes": [
+    "Logistic Support Request",
+    "CFAV Safety Brief",
+    "Cadet Safety Brief",
+    "Main Events List",
+    "Sketch Map"
+  ]
+}
