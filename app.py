@@ -633,7 +633,7 @@ with col2:
 # ----------------------------
 
 st.header("Signatory")
-data.setdefault("Signatory", {"Name": "", "Rank": "", "Appointment
+data.setdefault("Signatory", {"Name": "", "Rank": "", "Appointment": ""})
 col1, col2, col3 = st.columns(3)
 with col1:
     data["Signatory"]["Name"] = st.text_input(
