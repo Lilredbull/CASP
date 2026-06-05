@@ -1,0 +1,141 @@
+{
+  "Unit": {
+    "Appointment": "Detachment Commander",
+    "Name": "Sgt Anyone",
+    "Address": {
+      "Line1": "1st Line of Address",
+      "Line2": "2nd Line of Address",
+      "County": "Sussex",
+      "Postcode": "HO00 B00"
+    },
+    "Phone": "01234 567890",
+    "Email": "noname@armymail.mod.uk",
+    "DistributionReference": "distribution"
+  },
+  "Activity": {
+    "Code": "were345434",
+    "Name": "Here it is",
+    "Type": "Very Easy",
+    "SubUnit": "C Coy",
+    "PrimaryLocation": "My Home",
+    "StartDate": "2 July 26",
+    "EndDate": "",
+    "DocumentDate": "3 June 26",
+    "Purpose": "To get some in",
+    "CFAVCount": "5",
+    "CadetCount": "25",
+    "ConsultedWith": "Maj. Plumb"
+  },
+  "RiskAssessments": {
+    "CoreTrainingAtRFCAorDIO": {
+      "Title": "Sussex ACF Core training at RFCA/DIO locations",
+      "Date": "01 Jan 26"
+    },
+    "AF5010C": {
+      "Reference": "Obstacle Course",
+      "Date": "01 Jan 26"
+    }
+  },
+  "Authority": {
+    "AtCApprover": "Maj M Deroyal"
+  },
+  "Documents": [
+    "Risk Assessment",
+    "Training Programme",
+    "Stores List",
+    "Exercise and Action Safety Plan (EASP)",
+    "MOD Form 1930 Safe Activity Assurance Form (SAAF)",
+    "Joining Instructions",
+    "To to three"
+  ],
+  "Aims": [
+    "Detail the duties and responsibilities of the staff",
+    "Detail the implementation of control measures from the SST and Risk Assessment",
+    "Detail the administrative and support requirements",
+    "Here's another one"
+  ],
+  "Staff": [
+    {
+      "Role": "Senior Activity Owner",
+      "Rank": "Col.",
+      "Name": "Pumpkin",
+      "Qualification": "",
+      "Remarks": ""
+    },
+    {
+      "Role": "Activity Owner",
+      "Rank": "Maj.",
+      "Name": "Plumb",
+      "Qualification": "",
+      "Remarks": ""
+    },
+    {
+      "Role": "Activity Planner",
+      "Rank": "Capt.",
+      "Name": "Winds",
+      "Qualification": "",
+      "Remarks": ""
+    },
+    {
+      "Role": "Personnel Owner",
+      "Rank": "Various",
+      "Name": "Detachment Commander(s)",
+      "Qualification": "",
+      "Remarks": ""
+    }
+  ],
+  "SubActivityOwners": [],
+  "FirstAiders": [
+    {
+      "Role": "First Aider",
+      "Rank": "",
+      "Name": "",
+      "Qualification": "",
+      "Remarks": ""
+    }
+  ],
+  "Drivers": [
+    {
+      "Role": "Driver",
+      "Rank": "",
+      "Name": "",
+      "Qualification": "",
+      "Remarks": ""
+    }
+  ],
+  "Locations": [],
+  "Weather": {
+    "ForecastSources": [
+      "Met Office",
+      "BBC Weather",
+      "AccuWeather"
+    ]
+  },
+  "MedicalLocations": [],
+  "Signatory": {
+    "Name": "Anyone",
+    "Rank": "Sgt",
+    "Appointment": "Detachment Commander"
+  },
+  "Distribution": {
+    "Distribution": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "Info": [
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "Annexes": [
+    "Logistic Support Request",
+    "CFAV Safety Brief",
+    "Cadet Safety Brief",
+    "Main Events List",
+    "Sketch Map"
+  ]
+}
