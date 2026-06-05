@@ -5,7 +5,7 @@
     "Address": {
       "Line1": "Example Drill Hall",
       "Line2": "High Street",
-      "County": "East Sussex",
+      "County": "Merseyside",
       "Postcode": "BN1 1AA"
     },
     "Phone": "01234 567890",
@@ -28,7 +28,7 @@
   },
   "RiskAssessments": {
     "CoreTrainingAtRFCAorDIO": {
-      "Title": "Sussex ACF 'Core training at RFCA/DIO locations'",
+      "Title": "Merseyside ACF 'Core training at RFCA/DIO locations'",
       "Date": "01 August 2026"
     },
     "AF5010C": {
